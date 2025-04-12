@@ -1,0 +1,64 @@
+/* Ensure the container centers everything on the screen */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height to center vertically */
+}
+
+/* Center the login content vertically and align items */
+.login-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header contains the logo and title/subtitle, side by side */
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px; /* Space between header and form */
+}
+
+/* Title container for centering title and subtitle */
+.title-container {
+    text-align: center;
+    margin-left: 20px; /* Space between logo and title */
+}
+
+/* Style the game title */
+.game-title {
+    margin: 0; /* Remove default margins */
+    font-size: 2.5em; /* Adjust as needed */
+}
+
+/* Style the subtitle */
+.game-subtitle {
+    margin: 10px 0 0 0; /* Small top margin to separate from title */
+    font-size: 1.2em; /* Smaller than title */
+    font-weight: normal; /* Less emphasis than title */
+}
+
+/* Ensure the logo image has a reasonable size */
+.quiz-logo {
+    max-width: 100px; /* Adjust based on your image size */
+    height: auto;
+}
+
+/* Optional: Style the form elements if not already styled */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-group {
+    margin-bottom: 15px; /* Space between input and button */
+}
+
+.btn.btn-primary {
+    padding: 10px 20px;
+    font-size: 1em;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Master - Game</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/game.css">
+</head>
+<body class="game-page">
+    <div class="container">
+        <div class="game-container">
+            <div class="game-header">
+                <div class="timer-container">
+                    <div class="timer-bar">
+                        <div id="timer-progress" class="timer-progress"></div>
+                    </div>
+                    <div id="timer" class="timer">20</div>
+                </div>
+                <div class="question-counter">
+                    Question <span id="current-question">1</span> of <span id="total-questions">10</span>
+                </div>
+            </div>
+            
+            <div class="question-container">
+                <h2 id="question-text" class="question-text">Loading question...</h2>
+                
+                <div id="options-container" class="options-container">
+                    <!-- Options will be added here dynamically -->
+                </div>
+            </div>
+            
+            <div id="answer-result" class="answer-result hidden">
+                <div id="result-icon" class="result-icon"></div>
+                <h3 id="result-text" class="result-text">Correct!</h3>
+            </div>
+            
+            <div id="explanation-container" class="explanation-container hidden">
+                <h3>Correct Answer: <span id="correct-answer"></span></h3>
+                <div id="explanation" class="explanation"></div>
+            </div>
+        </div>
+        
+        <div id="game-over" class="game-over hidden">
+            <h2>Game Over!</h2>
+            <div class="leaderboard-container">
+                <h3>Leaderboard</h3>
+                <ul id="leaderboard" class="leaderboard">
+                    <!-- Leaderboard entries will be added here -->
+                </ul>
+            </div>
+            <button id="back-to-lobby" class="btn btn-primary">Back to Lobby</button>
+        </div>
+    </div>
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./js/game.js"></script>
+</body>
+</html>

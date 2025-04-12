@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Master - Waiting Room</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/waitroom.css">
+</head>
+<body class="wait-room-page">
+    <div class="container">
+        <div class="wait-room">
+            <h1 class="room-title">Waiting Room</h1>
+            <div class="waiting-message">
+                <p>Please wait for the admin to start the game...</p>
+                <div class="loading-spinner"></div>
+            </div>
+            
+            <div class="players-container">
+                <h2>Players in Room</h2>
+                <ul id="players-list" class="players-list">
+                    <!-- Players will be added here dynamically -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./js/waitroom.js"></script>
+</body>
+</html>

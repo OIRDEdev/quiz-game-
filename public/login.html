@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Master - Login</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/login.css">
+</head>
+<body class="login-page">
+    <div class="container">
+        <div class="quiz-login">
+            <div class="login-content">
+                <div class="header">
+                    <div class="title-container">
+                        <h1 class="game-title">CompraCerta</h1>
+                        <h2 class="game-subtitle">missão estatica</h2>
+                    </div>
+                    <div class="logo-container">
+                        <img src="./images/img.png" alt="Quiz Master Logo" class="quiz-logo">
+                    </div>
+                </div>
+                <div class="login-form">
+                    <div class="input-group">
+                        <input type="text" id="username" placeholder="Enter your name" required>
+                    </div>
+                    <button id="play-button" class="btn btn-primary">Play Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./js/login.js"></script>
+</body>
+</html>

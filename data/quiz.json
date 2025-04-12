@@ -1,0 +1,65 @@
+{
+    "questions": [
+      {
+        "question": "What is the capital of France?",
+        "options": ["Paris", "Berlin", "Madrid", "Rome"],
+        "correctAnswer": "Paris",
+        "explanation": "Paris is the capital and most populous city of France."
+      },
+      {
+        "question": "What is the largest planet in our solar system?",
+        "options": ["Mars", "Earth", "Jupiter", "Saturn"],
+        "correctAnswer": "Jupiter",
+        "explanation": "Jupiter is the largest planet with a mass more than two and a half times that of all the other planets combined."
+      },
+      {
+        "question": "Who wrote the play 'Romeo and Juliet'?",
+        "options": ["William Shakespeare", "Oscar Wilde", "Jane Austen", "Mark Twain"],
+        "correctAnswer": "William Shakespeare",
+        "explanation": "'Romeo and Juliet' is one of William Shakespeare's most famous tragedies."
+      },
+      {
+        "question": "Which element has the chemical symbol 'O'?",
+        "options": ["Oxygen", "Gold", "Osmium", "Iron"],
+        "correctAnswer": "Oxygen",
+        "explanation": "The chemical symbol 'O' stands for Oxygen."
+      },
+      {
+        "question": "What is the square root of 64?",
+        "options": ["6", "7", "8", "9"],
+        "correctAnswer": "8",
+        "explanation": "8 x 8 = 64."
+      },
+      {
+        "question": "In what year did the Titanic sink?",
+        "options": ["1910", "1912", "1914", "1916"],
+        "correctAnswer": "1912",
+        "explanation": "The Titanic sank on April 15, 1912."
+      },
+      {
+        "question": "Which continent is the Sahara Desert located in?",
+        "options": ["Asia", "Africa", "Australia", "South America"],
+        "correctAnswer": "Africa",
+        "explanation": "The Sahara Desert is located in North Africa."
+      },
+      {
+        "question": "What language has the most native speakers worldwide?",
+        "options": ["English", "Spanish", "Mandarin Chinese", "Hindi"],
+        "correctAnswer": "Mandarin Chinese",
+        "explanation": "Mandarin Chinese has the most native speakers in the world."
+      },
+      {
+        "question": "What is H2O commonly known as?",
+        "options": ["Hydrogen", "Oxygen", "Salt", "Water"],
+        "correctAnswer": "Water",
+        "explanation": "H2O is the chemical formula for water."
+      },
+      {
+        "question": "How many continents are there on Earth?",
+        "options": ["5", "6", "7", "8"],
+        "correctAnswer": "7",
+        "explanation": "The seven continents are Asia, Africa, North America, South America, Antarctica, Europe, and Australia."
+      }
+    ]
+  }
+  

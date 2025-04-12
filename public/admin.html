@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Master - Admin Panel</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/admin.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="admin-page">
+    <div class="admin-container">
+        <header class="admin-header">
+            <h1>Quiz Master Admin Panel</h1>
+            <div class="admin-controls">
+                <button id="start-game" class="btn btn-success">Start Game</button>
+                <button id="pause-game" class="btn btn-warning" disabled>Pause Game</button>
+                <button id="resume-game" class="btn btn-info" disabled>Resume Game</button>
+                <button id="end-game" class="btn btn-danger" disabled>End Game</button>
+            </div>
+        </header>
+        
+        <div class="admin-content">
+            <div class="admin-sidebar">
+                <div class="players-panel">
+                    <h3>Connected Players</h3>
+                    <ul id="admin-players-list" class="admin-players-list">
+                        <!-- Players will be added here dynamically -->
+                    </ul>
+                </div>
+                
+                <div class="game-status">
+                    <h3>Game Status</h3>
+                    <div id="game-status-text" class="status-text">Not Started</div>
+                    <div class="question-progress">
+                        <span id="admin-question-counter">0/0</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="admin-main">
+                <div id="login-panel" class="login-panel">
+                    <h2>Admin Login</h2>
+                    <div class="input-group">
+                        <input type="password" id="admin-password" placeholder="Enter admin password">
+                    </div>
+                    <button id="admin-login-btn" class="btn btn-primary">Login</button>
+                </div>
+                
+                <div id="dashboard" class="dashboard hidden">
+                    <div id="current-question-panel" class="question-panel">
+                        <h3>Current Question</h3>
+                        <div id="admin-question-text" class="admin-question"></div>
+                        <div class="admin-answer">
+                            <strong>Correct Answer:</strong> <span id="admin-correct-answer"></span>
+                        </div>
+                        <div class="admin-explanation">
+                            <strong>Explanation:</strong> <div id="admin-explanation"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="stats-panel">
+                        <h3>Real-time Statistics</h3>
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-title">Answers Submitted</div>
+                                <div id="answers-count" class="stat-value">0/0</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-title">Correct Answers</div>
+                                <div id="correct-count" class="stat-value">0 (0%)</div>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="answers-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="game-summary" class="game-summary hidden">
+                    <h2>Game Summary</h2>
+                    <div class="summary-container">
+                        <div class="leaderboard-section">
+                            <h3>Final Leaderboard</h3>
+                            <ul id="admin-leaderboard" class="admin-leaderboard">
+                                <!-- Leaderboard entries will be added here -->
+                            </ul>
+                        </div>
+                        <div class="performance-section">
+                            <h3>Performance Overview</h3>
+                            <div class="chart-container">
+                                <canvas id="performance-chart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
