@@ -1,65 +1,64 @@
 {
-    "questions": [
-      {
-        "question": "What is the capital of France?",
-        "options": ["Paris", "Berlin", "Madrid", "Rome"],
-        "correctAnswer": "Paris",
-        "explanation": "Paris is the capital and most populous city of France."
-      },
-      {
-        "question": "What is the largest planet in our solar system?",
-        "options": ["Mars", "Earth", "Jupiter", "Saturn"],
-        "correctAnswer": "Jupiter",
-        "explanation": "Jupiter is the largest planet with a mass more than two and a half times that of all the other planets combined."
-      },
-      {
-        "question": "Who wrote the play 'Romeo and Juliet'?",
-        "options": ["William Shakespeare", "Oscar Wilde", "Jane Austen", "Mark Twain"],
-        "correctAnswer": "William Shakespeare",
-        "explanation": "'Romeo and Juliet' is one of William Shakespeare's most famous tragedies."
-      },
-      {
-        "question": "Which element has the chemical symbol 'O'?",
-        "options": ["Oxygen", "Gold", "Osmium", "Iron"],
-        "correctAnswer": "Oxygen",
-        "explanation": "The chemical symbol 'O' stands for Oxygen."
-      },
-      {
-        "question": "What is the square root of 64?",
-        "options": ["6", "7", "8", "9"],
-        "correctAnswer": "8",
-        "explanation": "8 x 8 = 64."
-      },
-      {
-        "question": "In what year did the Titanic sink?",
-        "options": ["1910", "1912", "1914", "1916"],
-        "correctAnswer": "1912",
-        "explanation": "The Titanic sank on April 15, 1912."
-      },
-      {
-        "question": "Which continent is the Sahara Desert located in?",
-        "options": ["Asia", "Africa", "Australia", "South America"],
-        "correctAnswer": "Africa",
-        "explanation": "The Sahara Desert is located in North Africa."
-      },
-      {
-        "question": "What language has the most native speakers worldwide?",
-        "options": ["English", "Spanish", "Mandarin Chinese", "Hindi"],
-        "correctAnswer": "Mandarin Chinese",
-        "explanation": "Mandarin Chinese has the most native speakers in the world."
-      },
-      {
-        "question": "What is H2O commonly known as?",
-        "options": ["Hydrogen", "Oxygen", "Salt", "Water"],
-        "correctAnswer": "Water",
-        "explanation": "H2O is the chemical formula for water."
-      },
-      {
-        "question": "How many continents are there on Earth?",
-        "options": ["5", "6", "7", "8"],
-        "correctAnswer": "7",
-        "explanation": "The seven continents are Asia, Africa, North America, South America, Antarctica, Europe, and Australia."
-      }
-    ]
-  }
-  
+  "questions": [
+    {
+      "question": "Qual o tipo de produto mais procurado pelos clientes (ex: alimentos, produtos de limpeza, bebidas, etc.)?",
+      "options": ["Alimentos", "Produtos de limpeza", "Bebidas", "Eletrônicos"],
+      "correctAnswer": "Alimentos",
+      "explanation": "Alimentos são essenciais e geralmente apresentam alta rotatividade em supermercados."
+    },
+    {
+      "question": "Quais são os principais perfis de clientes que frequentam o supermercado (ex: famílias, estudantes, idosos)?",
+      "options": ["Famílias", "Estudantes", "Idosos", "Profissionais"],
+      "correctAnswer": "Famílias",
+      "explanation": "Famílias costumam realizar compras maiores e com maior frequência."
+    },
+    {
+      "question": "Qual a forma de pagamento mais utilizada pelos clientes (ex: cartão de crédito, débito, Pix, dinheiro)?",
+      "options": ["Cartão de crédito", "Débito", "Pix", "Dinheiro"],
+      "correctAnswer": "Cartão de crédito",
+      "explanation": "Cartão de crédito é comum devido à facilidade de parcelamento e programas de benefícios."
+    },
+    {
+      "question": "Em quais dias da semana o supermercado recebe maior fluxo de clientes?",
+      "options": ["Sábado e domingo", "Segunda e terça", "Quarta e quinta", "Sexta e sábado"],
+      "correctAnswer": "Sábado e domingo",
+      "explanation": "Fins de semana são períodos em que as pessoas têm mais tempo para fazer compras."
+    },
+    {
+      "question": "Como os clientes classificam o atendimento no supermercado (ex: excelente, bom, regular, ruim)?",
+      "options": ["Excelente", "Bom", "Regular", "Ruim"],
+      "correctAnswer": "Bom",
+      "explanation": "A classificação 'bom' reflete um equilíbrio entre eficiência e satisfação geral."
+    },
+    {
+      "question": "Qual é o faturamento médio diário do supermercado?",
+      "options": ["R$ 15.000", "R$ 25.000", "R$ 35.000", "R$ 45.000"],
+      "correctAnswer": "R$ 25.000",
+      "explanation": "Valor baseado na média de faturamento de supermercados de porte médio."
+    },
+    {
+      "question": "Quantas vendas são realizadas por dia, em média?",
+      "options": ["200 vendas", "350 vendas", "500 vendas", "650 vendas"],
+      "correctAnswer": "350 vendas",
+      "explanation": "Média calculada considerando horários de pico e dias mais movimentados."
+    },
+    {
+      "question": "Qual é o ticket médio por compra?",
+      "options": ["R$ 80", "R$ 120", "R$ 160", "R$ 200"],
+      "correctAnswer": "R$ 120",
+      "explanation": "Valor comum em supermercados, considerando a variedade de produtos adquiridos."
+    },
+    {
+      "question": "Quantos clientes o supermercado atende por semana?",
+      "options": ["1.500 clientes", "2.500 clientes", "3.500 clientes", "4.500 clientes"],
+      "correctAnswer": "2.500 clientes",
+      "explanation": "Número estimado com base no fluxo diário e sazonalidade."
+    },
+    {
+      "question": "Quantos produtos diferentes estão disponíveis nas prateleiras do supermercado?",
+      "options": ["5.000 produtos", "10.000 produtos", "15.000 produtos", "20.000 produtos"],
+      "correctAnswer": "10.000 produtos",
+      "explanation": "Supermercados médios costumam oferecer cerca de 10 mil itens diferentes."
+    }
+  ]
+}
