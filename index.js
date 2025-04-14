@@ -5,7 +5,7 @@ const http = require('http');
 const socketIO = require('socket.io');
 const path = require('path');
 const fs = require('fs');
-
+const os = require('os');
 // Initialize express app, server and socket.io
 const app = express();
 const server = http.createServer(app);
@@ -362,8 +362,22 @@ function updateAnswerStatistics(isFinal = false) {
   }
 }
 
-// Start the server
 const PORT = process.env.PORT || 3000;
+// Start the server
 server.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  const interfaces = os.networkInterfaces();
+  let localIp = 'localhost';
+
+  for (let iface of Object.values(interfaces)) {
+    for (let alias of iface) {
+      if (alias.family === 'IPv4' && !alias.internal) {
+        localIp = alias.address;
+        break;
+      }
+    }
+  }
+
+  console.log(`\n🔗 Links para acessar o servidor:`);
+  console.log(`➡️ Localhost: http://localhost:${PORT}`);
+  console.log(`➡️ Network:  http://${localIp}:${PORT}\n`);
 });

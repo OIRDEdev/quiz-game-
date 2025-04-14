@@ -1,64 +1,64 @@
 {
   "questions": [
     {
-      "question": "O número de caixas de atendimento funcionando em um supermercado é uma variável ________?",
-      "options": ["Qualitativa Nominal", "Qualitativa Ordinal", "Quantitativa Discreta", "Quantitativa Contínua"],
-      "correctAnswer": "Quantitativa Discreta",
-      "explanation": "O número de caixas é um valor inteiro que pode ser contado."
-    },
-    {
-      "question": "A marca do arroz disponível para venda é uma variável ________?",
+      "question": "Qual o tipo de produto mais procurado pelos clientes (ex: alimentos, produtos de limpeza, bebidas, etc.)?",
       "options": ["Qualitativa Nominal", "Qualitativa Ordinal", "Quantitativa Discreta", "Quantitativa Contínua"],
       "correctAnswer": "Qualitativa Nominal",
-      "explanation": "As marcas são categorias sem uma ordem específica."
+      "explanation": "Os tipos de produto são categorias sem ordem, como alimentos, bebidas, etc."
     },
     {
-      "question": "O peso das frutas e legumes vendidos a granel é uma variável ________?",
+      "question": "Quais são os principais perfis de clientes que frequentam o supermercado (ex: famílias, estudantes, idosos)?",
       "options": ["Qualitativa Nominal", "Qualitativa Ordinal", "Quantitativa Discreta", "Quantitativa Contínua"],
-      "correctAnswer": "Quantitativa Contínua",
-      "explanation": "O peso pode assumir qualquer valor dentro de um intervalo."
+      "correctAnswer": "Qualitativa Nominal",
+      "explanation": "Perfis de clientes são categorias distintas sem ordem."
     },
     {
-      "question": "A avaliação da satisfação dos clientes com o atendimento (em uma escala de 1 a 5) é uma variável ________?",
+      "question": "Qual a forma de pagamento mais utilizada pelos clientes (ex: cartão de crédito, débito, Pix, dinheiro)?",
+      "options": ["Qualitativa Nominal", "Qualitativa Ordinal", "Quantitativa Discreta", "Quantitativa Contínua"],
+      "correctAnswer": "Qualitativa Nominal",
+      "explanation": "As formas de pagamento são categorias sem hierarquia."
+    },
+    {
+      "question": "Em quais dias da semana o supermercado recebe maior fluxo de clientes?",
+      "options": ["Qualitativa Nominal", "Qualitativa Ordinal", "Quantitativa Discreta", "Quantitativa Contínua"],
+      "correctAnswer": "Qualitativa Nominal",
+      "explanation": "Os dias da semana são categorias que não seguem uma ordem natural nesse contexto."
+    },
+    {
+      "question": "Como os clientes classificam o atendimento no supermercado (ex: excelente, bom, regular, ruim)?",
       "options": ["Qualitativa Nominal", "Qualitativa Ordinal", "Quantitativa Discreta", "Quantitativa Contínua"],
       "correctAnswer": "Qualitativa Ordinal",
-      "explanation": "As categorias de satisfação possuem uma ordem (do pior ao melhor)."
+      "explanation": "As classificações têm uma ordem hierárquica (ruim até excelente)."
     },
     {
-      "question": "O tipo de embalagem dos biscoitos (caixa, pacote plástico, etc.) é uma variável ________?",
-      "options": ["Qualitativa Nominal", "Qualitativa Ordinal", "Quantitativa Discreta", "Quantitativa Contínua"],
-      "correctAnswer": "Qualitativa Nominal",
-      "explanation": "Os tipos de embalagem são categorias sem uma ordem inerente."
-    },
-    {
-      "question": "O preço por quilo da carne bovina é uma variável ________?",
+      "question": "Qual é o faturamento médio diário do supermercado?",
       "options": ["Qualitativa Nominal", "Qualitativa Ordinal", "Quantitativa Discreta", "Quantitativa Contínua"],
       "correctAnswer": "Quantitativa Contínua",
-      "explanation": "O preço pode assumir qualquer valor dentro de um intervalo."
+      "explanation": "O faturamento pode assumir qualquer valor decimal em um intervalo."
     },
     {
-      "question": "A seção do supermercado onde um produto está localizado (padaria, açougue, hortifruti, etc.) é uma variável ________?",
-      "options": ["Qualitativa Nominal", "Qualitativa Ordinal", "Quantitativa Discreta", "Quantitativa Contínua"],
-      "correctAnswer": "Qualitativa Nominal",
-      "explanation": "As seções são categorias distintas sem uma ordem específica."
-    },
-    {
-      "question": "O número de clientes que entram na loja por hora é uma variável ________?",
+      "question": "Quantas vendas são realizadas por dia, em média?",
       "options": ["Qualitativa Nominal", "Qualitativa Ordinal", "Quantitativa Discreta", "Quantitativa Contínua"],
       "correctAnswer": "Quantitativa Discreta",
-      "explanation": "O número de clientes é um valor inteiro que pode ser contado."
+      "explanation": "A quantidade de vendas é um valor inteiro e contável."
     },
     {
-      "question": "A presença ou ausência de um selo de produto orgânico em uma embalagem é uma variável ________?",
+      "question": "Qual é o ticket médio por compra?",
       "options": ["Qualitativa Nominal", "Qualitativa Ordinal", "Quantitativa Discreta", "Quantitativa Contínua"],
-      "correctAnswer": "Qualitativa Nominal",
-      "explanation": "A presença ou ausência são duas categorias sem ordem."
+      "correctAnswer": "Quantitativa Contínua",
+      "explanation": "O ticket médio envolve valores com casas decimais."
     },
     {
-      "question": "A ordem dos produtos em uma prateleira é uma variável ________?",
+      "question": "Quantos clientes o supermercado atende por semana?",
       "options": ["Qualitativa Nominal", "Qualitativa Ordinal", "Quantitativa Discreta", "Quantitativa Contínua"],
-      "correctAnswer": "Qualitativa Ordinal",
-      "explanation": "A ordem dos produtos implica uma posição relativa."
+      "correctAnswer": "Quantitativa Discreta",
+      "explanation": "Número de clientes é uma contagem inteira e exata."
+    },
+    {
+      "question": "Quantos produtos diferentes estão disponíveis nas prateleiras do supermercado?",
+      "options": ["Qualitativa Nominal", "Qualitativa Ordinal", "Quantitativa Discreta", "Quantitativa Contínua"],
+      "correctAnswer": "Quantitativa Discreta",
+      "explanation": "A quantidade de produtos distintos é uma variável contável."
     }
   ]
 }

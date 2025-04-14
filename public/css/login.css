@@ -1,64 +1,410 @@
-/* Ensure the container centers everything on the screen */
-.container {
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', 'Segoe UI', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    min-height: 100vh;
+    background: #f5f7fa;
+}
+
+/* Header */
+.site-header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 20px 40px;
+    z-index: 100;
+}
+
+.language-selector {
     display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.language-selector span {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
+.language-selector select {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 8px;
+    padding: 8px 12px;
+    color: #333;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.language-selector select:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.language-selector select:focus {
+    outline: none;
+    border-color: #58CC02;
+    box-shadow: 0 0 0 2px rgba(88, 204, 2, 0.2);
+}
+
+/* Main content */
+.main-content {
+    display: flex;
+    min-height: 100vh;
+    padding: 40px;
+    gap: 40px;
+}
+
+/* Left section with mascot */
+.left-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    align-items: center;
-    height: 100vh; /* Full viewport height to center vertically */
+    position: relative;
 }
 
-/* Center the login content vertically and align items */
-.login-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.mascot-group {
+    position: relative;
+    width: 600px;
+    height: 600px;
 }
 
-/* Header contains the logo and title/subtitle, side by side */
-.header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px; /* Space between header and form */
-}
-
-/* Title container for centering title and subtitle */
-.title-container {
-    text-align: center;
-    margin-left: 20px; /* Space between logo and title */
-}
-
-/* Style the game title */
-.game-title {
-    margin: 0; /* Remove default margins */
-    font-size: 2.5em; /* Adjust as needed */
-}
-
-/* Style the subtitle */
-.game-subtitle {
-    margin: 10px 0 0 0; /* Small top margin to separate from title */
-    font-size: 1.2em; /* Smaller than title */
-    font-weight: normal; /* Less emphasis than title */
-}
-
-/* Ensure the logo image has a reasonable size */
-.quiz-logo {
-    max-width: 100px; /* Adjust based on your image size */
+.main-logo {
+    width: 180px;
     height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
 }
 
-/* Optional: Style the form elements if not already styled */
-.login-form {
+.characters-group {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/* Characters and animation */
+.character {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    animation: float 3s ease-in-out infinite;
+}
+
+.character-1 { top: 10%; left: 20%; animation-delay: 0s; background: #58CC02; }
+.character-2 { top: 20%; right: 15%; animation-delay: 0.5s; background: #FF4B4B; }
+.character-3 { bottom: 25%; left: 10%; animation-delay: 1s; background: #1CB0F6; }
+.character-4 { bottom: 15%; right: 20%; animation-delay: 1.5s; background: #CE82FF; }
+.character-5 { top: 40%; left: 50%; animation-delay: 2s; background: #FFC800; }
+
+/* Coins */
+.coins-group {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.coin {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: #FFC800;
+    border-radius: 50%;
+    animation: float 3s ease-in-out infinite;
+}
+
+.coin-1 { top: 30%; right: 35%; animation-delay: 0.2s; }
+.coin-2 { bottom: 40%; left: 30%; animation-delay: 0.7s; }
+.coin-3 { top: 60%; right: 25%; animation-delay: 1.2s; }
+
+/* Right section */
+.right-section {
+    flex: 1;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 600px;
+    padding: 0 40px;
+}
+
+.brand-title {
+    font-size: 48px;
+    font-weight: 800;
+    color: #58CC02;
+    margin-bottom: 16px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.main-title {
+    font-size: 32px;
+    line-height: 1.25;
+    color: #333;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Buttons */
+.btn {
+    width: 100%;
+    padding: 16px 24px;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background: #58CC02;
+    color: white;
+    border-bottom: 4px solid #58A700;
+}
+
+.btn-primary:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+}
+
+.btn-primary:active {
+    transform: translateY(1px);
+    border-bottom-width: 2px;
+}
+
+/* Login screen */
+.login-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
     align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.login-screen.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.login-box {
+    background: #fff;
+    border-radius: 16px;
+    padding: 30px;
+    position: relative;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.login-screen.visible .login-box {
+    transform: translateY(0);
+}
+
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 8px;
+    transition: all 0.2s ease;
+}
+
+.back-button:hover {
+    color: #333;
+    transform: translateX(-3px);
+}
+
+.login-form {
+    margin-top: 20px;
 }
 
 .input-group {
-    margin-bottom: 15px; /* Space between input and button */
+    position: relative;
+    margin-bottom: 20px;
 }
 
-.btn.btn-primary {
-    padding: 10px 20px;
-    font-size: 1em;
+.input-group i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #58CC02;
+    font-size: 20px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px 15px 15px 45px;
+    border: 2px solid #E5E5E5;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: all 0.2s ease;
+}
+
+.input-group input:focus {
+    border-color: #58CC02;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(88, 204, 2, 0.1);
+}
+
+.error-message {
+    color: #FF4B4B;
+    font-size: 14px;
+    margin-top: 15px;
+    text-align: center;
+    min-height: 20px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Animations */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.shake {
+    animation: shake 0.3s ease-in-out;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+    .main-content {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .mascot-group {
+        width: 400px;
+        height: 400px;
+    }
+
+    .right-section {
+        padding: 0;
+        align-items: center;
+        text-align: center;
+    }
+
+    .brand-title {
+        font-size: 40px;
+    }
+
+    .main-title {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    .mascot-group {
+        width: 300px;
+        height: 300px;
+    }
+
+    .character {
+        width: 80px;
+        height: 80px;
+    }
+
+    .coin {
+        width: 30px;
+        height: 30px;
+    }
+
+    .brand-title {
+        font-size: 36px;
+    }
+
+    .main-title {
+        font-size: 24px;
+    }
+
+    .btn {
+        padding: 14px 20px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-header {
+        padding: 15px 20px;
+    }
+    
+    .mascot-group {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .character {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .main-logo {
+        width: 120px;
+    }
+    
+    .brand-title {
+        font-size: 32px;
+    }
+    
+    .main-title {
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+    
+    .login-container {
+        padding: 10px;
+    }
+    
+    .login-box {
+        padding: 20px;
+    }
 }

@@ -1,28 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compra certa - Game</title>
+    <title>CompraCerta - Quiz Game</title>
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/game.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body class="game-page">
     <div class="container">
         <div class="game-container">
-            <div class="game-header">
+            <div class="game-header glass-card">
                 <div class="timer-container">
+                    <i class="fas fa-clock"></i>
                     <div class="timer-bar">
                         <div id="timer-progress" class="timer-progress"></div>
                     </div>
                     <div id="timer" class="timer">20</div>
                 </div>
                 <div class="question-counter">
-                    Question <span id="current-question">1</span> of <span id="total-questions">10</span>
+                    Questão <span id="current-question">1</span> de <span id="total-questions">10</span>
                 </div>
             </div>
             
-            <div class="question-container">
+            <div class="question-container glass-card">
                 <h2 id="question-text" class="question-text">Carregando questões...</h2>
                 
                 <div id="options-container" class="options-container">
@@ -30,20 +32,22 @@
                 </div>
             </div>
             
-            <div id="answer-result" class="answer-result hidden">
-                <div id="result-icon" class="result-icon"></div>
-                <h3 id="result-text" class="result-text">Correct!</h3>
+            <div id="answer-result" class="answer-result glass-card hidden">
+                <div class="result-icon">
+                    <i id="result-icon" class="fas"></i>
+                </div>
+                <h3 id="result-text" class="result-text">Correto!</h3>
             </div>
             
-            <div id="explanation-container" class="explanation-container hidden">
-                <h3>Correct Answer: <span id="correct-answer"></span></h3>
+            <div id="explanation-container" class="explanation-container glass-card hidden">
+                <h3>Resposta Correta: <span id="correct-answer"></span></h3>
                 <div id="explanation" class="explanation"></div>
             </div>
             
-            <div id="question-leaderboard" class="question-leaderboard hidden">
-                <h3>Current Standings</h3>
+            <div id="question-leaderboard" class="question-leaderboard glass-card hidden">
+                <h3><i class="fas fa-trophy"></i> Placar Atual</h3>
                 <div class="leaderboard-container">
-                    <ul id="live-leaderboard" class="leaderboard">
+                    <ul id="live-leaderboard" class="leaderboard-list">
                         <!-- Leaderboard entries will be added here dynamically -->
                     </ul>
                 </div>
@@ -51,14 +55,17 @@
         </div>
         
         <div id="game-over" class="game-over hidden">
-            <h2>Game Over!</h2>
-            <div class="leaderboard-container">
-                <h3>Leaderboard</h3>
-                <ul id="leaderboard" class="leaderboard">
-                    <!-- Leaderboard entries will be added here -->
-                </ul>
+            <div class="game-over-content glass-card">
+                <h2><i class="fas fa-flag-checkered"></i> Fim de Jogo!</h2>
+                <div class="confetti-container" id="confetti-container"></div>
+                <div class="leaderboard-container">
+                    <h3>Placar Final</h3>
+                    <ul id="leaderboard" class="leaderboard-list">
+                        <!-- Leaderboard entries will be added here -->
+                    </ul>
+                </div>
+                <button id="back-to-lobby" class="btn btn-primary">Voltar ao Lobby</button>
             </div>
-            <button id="back-to-lobby" class="btn btn-primary">Back to Lobby</button>
         </div>
     </div>
     

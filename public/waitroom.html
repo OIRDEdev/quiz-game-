@@ -1,26 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sala de espera</title>
+    <title>CompraCerta - Sala de Espera</title>
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/waitroom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body class="wait-room-page">
+<body class="waitroom-page">
+    <div class="owl-container">
+        <div class="owl">
+            <div class="owl-body"></div>
+            <div class="owl-eyes">
+                <div class="owl-eye left">
+                    <div class="pupil"></div>
+                </div>
+                <div class="owl-eye right">
+                    <div class="pupil"></div>
+                </div>
+            </div>
+            <div class="owl-beak"></div>
+        </div>
+    </div>
+    
     <div class="container">
-        <div class="wait-room">
-            <h1 class="room-title">Sala de espera</h1>
-            <div class="waiting-message">
-                <p>Esperando o adminitrador iniciar o jogo...</p>
-                <div class="loading-spinner"></div>
+        <div class="waitroom-card glass-card">
+            <div class="header">
+                <img src="./images/img.png" alt="Logo" class="logo">
+                <h1 class="title">Sala de Espera</h1>
             </div>
             
-            <div class="players-container">
-                <h2>Players na Sala</h2>
-                <ul id="players-list" class="players-list">
+            <div class="waiting-message">
+                <div class="message-text">Esperando o administrador iniciar o jogo...</div>
+                <div class="loading-animation">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                </div>
+            </div>
+            
+            <div class="players-section">
+                <h2><i class="fas fa-users"></i> Jogadores na Sala</h2>
+                <div class="players-grid" id="players-list">
                     <!-- Players will be added here dynamically -->
+                </div>
+                <div class="counter">
+                    <span id="player-count">0</span> jogadores conectados
+                </div>
+            </div>
+            
+            <div class="instructions">
+                <h3><i class="fas fa-info-circle"></i> Como Jogar</h3>
+                <ul>
+                    <li>Responda corretamente para ganhar pontos</li>
+                    <li>Respostas mais rápidas valem mais pontos</li>
+                    <li>Acompanhe sua posição no ranking após cada pergunta</li>
                 </ul>
+            </div>
+            
+            <div class="characters-animation">
+                <div class="character character-1"></div>
+                <div class="character character-2"></div>
+                <div class="character character-3"></div>
+                <div class="coin coin-1"></div>
+                <div class="coin coin-2"></div>
             </div>
         </div>
     </div>

@@ -3,29 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compra certa - Login</title>
+    <title>CompraCerta - Quiz Game</title>
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body class="login-page">
-    <div class="container">
-        <div class="quiz-login">
-            <div class="login-content">
-                <div class="header">
-                    <div class="title-container">
-                        <h1 class="game-title">CompraCerta</h1>
-                        <h2 class="game-subtitle">missão estatica</h2>
-                    </div>
-                    <div class="logo-container">
-                        <img src="./images/img.png" alt="Quiz Master Logo" class="quiz-logo">
+    <header class="site-header">
+        <div class="language-selector">
+            <span>IDIOMA DO SITE:</span>
+            <select id="language-select">
+                <option value="pt-BR">PORTUGUÊS</option>
+                <option value="en">ENGLISH</option>
+            </select>
+        </div>
+    </header>
+
+    <main class="main-content" id="initial-screen">
+        <div class="left-section">
+            <div class="mascot-group">
+                <img src="./images/img.png" alt="CompraCerta Logo" class="main-logo">
+                <div class="characters-group">
+                    <div class="character character-1"></div>
+                    <div class="character character-2"></div>
+                    <div class="character character-3"></div>
+                    <div class="character character-4"></div>
+                    <div class="character character-5"></div>
+                    <div class="coins-group">
+                        <div class="coin coin-1"></div>
+                        <div class="coin coin-2"></div>
+                        <div class="coin coin-3"></div>
                     </div>
                 </div>
-                <div class="login-form">
+            </div>
+        </div>
+
+        <div class="right-section">
+            <h1 class="brand-title">CompraCerta</h1>
+            <h2 class="main-title">MISSÃO ESTATÍSTICA</h2>
+            <div class="buttons-container">
+                <button id="start-button" class="btn btn-primary btn-large">COMECE AGORA</button>
+            </div>
+        </div>
+    </main>
+
+    <div id="login-screen" class="login-screen hidden">
+        <div class="login-container">
+            <div class="login-box">
+                <button class="back-button" id="back-button">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                <form id="login-form" class="login-form">
                     <div class="input-group">
-                        <input type="text" id="username" placeholder="Enter your name" required>
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="username" placeholder="Digite seu nome" required>
                     </div>
-                    <button id="play-button" class="btn btn-primary">Play Now</button>
-                </div>
+                    <button type="submit" class="btn btn-primary btn-large">
+                        <span class="button-text">ENTRAR →</span>
+                    </button>
+                    <div id="error-message" class="error-message"></div>
+                </form>
             </div>
         </div>
     </div>
