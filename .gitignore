@@ -1,0 +1,30 @@
+# Ignora a pasta node_modules
+node_modules/
+
+# Ignora logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ignora arquivos de ambiente
+.env
+
+# Ignora diretórios do sistema/IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Ignora builds
+dist/
+build/
+
+# Ignora arquivos temporários do sistema
+*.swp
+*.swo
+
+# Ignora coverage de testes
+coverage/
+
+# Ignora arquivos do Windows
+desktop.ini

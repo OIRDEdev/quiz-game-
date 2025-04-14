@@ -150,7 +150,7 @@ io.on('connection', (socket) => {
       });
     }
   });
-
+  const currentQuestion = quizData.questions[gameState.currentQuestion];
   // Player submits an answer
   socket.on('submit_answer', (data) => {
     if (!gameState.isActive || gameState.playerAnswers[socket.id]) {
@@ -159,7 +159,7 @@ io.on('connection', (socket) => {
 
     const currentQ = quizData.questions[gameState.currentQuestion];
     const isCorrect = data.answer === currentQ.correctAnswer;
-    
+    const currentQuestion = quizData.questions[gameState.currentQuestion];
     // Record the player's answer
     gameState.playerAnswers[socket.id] = {
       playerId: socket.id,
@@ -185,11 +185,25 @@ io.on('connection', (socket) => {
     
     // Acknowledge the answer
     socket.emit('answer_received', {
-      isCorrect: isCorrect
+      isCorrect: isCorrect,
+      correctAnswer: currentQuestion.correctAnswer,
+      explanation: currentQuestion.explanation
     });
     
     // Update admin with real-time answer stats
     updateAnswerStatistics();
+  });
+
+  // New socket event handler for leaderboard requests
+  socket.on('request_leaderboard', () => {
+    // Calculate and sort players by score
+    const sortedPlayers = Object.values(gameState.players)
+        .sort((a, b) => b.score - a.score);
+    
+    // Send leaderboard to the requesting client
+    socket.emit('leaderboard_update', {
+        leaderboard: sortedPlayers
+    });
   });
 
   // Disconnect event
@@ -336,6 +350,16 @@ function updateAnswerStatistics(isFinal = false) {
     totalPlayers: Object.keys(gameState.players).length,
     isFinal: isFinal
   });
+  
+  // If this is the final update for this question, broadcast the current leaderboard
+  if (isFinal) {
+    const sortedPlayers = Object.values(gameState.players)
+        .sort((a, b) => b.score - a.score);
+    
+    io.emit('leaderboard_update', {
+        leaderboard: sortedPlayers
+    });
+  }
 }
 
 // Start the server

@@ -17,6 +17,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const gameOver = document.getElementById('game-over');
     const leaderboard = document.getElementById('leaderboard');
     const backToLobby = document.getElementById('back-to-lobby');
+    // Add new leaderboard elements
+    const questionLeaderboard = document.getElementById('question-leaderboard');
+    const liveLeaderboard = document.getElementById('live-leaderboard');
+    
+    // Store previous rankings to track changes
+    let previousRanks = {};
     
     // Check if user is logged in
     const username = sessionStorage.getItem('username');
@@ -68,6 +74,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     answer: option
                 });
                 
+                
+
                 hasAnswered = true;
                 
                 // Disable all options
@@ -100,6 +108,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Handle answer feedback
     socket.on('answer_received', (data) => {
         showAnswerResult(data.isCorrect);
+
+        correctAnswer.textContent = data.correctAnswer;
+        explanation.textContent = data.explanation;
+        explanationContainer.classList.remove('hidden');
     });
     
     // Handle showing correct answer
@@ -119,19 +131,37 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         
-        // Show explanation
-        correctAnswer.textContent = data.correctAnswer;
-        explanation.textContent = data.explanation;
-        explanationContainer.classList.remove('hidden');
+        
+        // Wait a bit before showing the leaderboard
+        setTimeout(() => {
+            // Request current leaderboard from server
+            socket.emit('request_leaderboard');
+        }, 2000);
+    });
+    
+    // Handle receiving leaderboard data
+    socket.on('leaderboard_update', (data) => {
+        // Hide question container and show leaderboard
+        answerResult.classList.add('hidden');
+        
+        updateLiveLeaderboard(data.leaderboard);
+        questionLeaderboard.classList.remove('hidden');
+
+        document.querySelector('.question-container').classList.add('hidden');
+        explanationContainer.classList.add('hidden');
+        
+        // Add animation class to make it stand out
+        questionLeaderboard.classList.add('leaderboard-active');
     });
     
     // Handle game ended
     socket.on('game_ended', (data) => {
-        // Hide game container and show game over screen
+        // Hide all game elements
         document.querySelector('.game-container').classList.add('hidden');
+        questionLeaderboard.classList.add('hidden');
         gameOver.classList.remove('hidden');
         
-        // Populate leaderboard
+        // Populate final leaderboard
         const sortedPlayers = data.leaderboard.slice(0, 10); // Top 10 players
         
         leaderboard.innerHTML = '';
@@ -172,6 +202,11 @@ document.addEventListener('DOMContentLoaded', () => {
         // Hide result and explanation
         answerResult.classList.add('hidden');
         explanationContainer.classList.add('hidden');
+        
+        // Hide leaderboard and show question container again
+        questionLeaderboard.classList.add('hidden');
+        questionLeaderboard.classList.remove('leaderboard-active');
+        document.querySelector('.question-container').classList.remove('hidden');
     }
     
     function disableOptions() {
@@ -237,4 +272,66 @@ document.addEventListener('DOMContentLoaded', () => {
             socket.emit('player_login', username);
         }
     });
+    
+    // New function to update live leaderboard with animations
+    function updateLiveLeaderboard(players) {
+        // Take only top 10 players
+        const topPlayers = players.slice(0, 10);
+        
+        // Clear the leaderboard
+        liveLeaderboard.innerHTML = '';
+        
+        // Populate with new data
+        topPlayers.forEach((player, index) => {
+            const rankItem = document.createElement('li');
+            rankItem.className = 'leaderboard-item';
+            rankItem.dataset.playerId = player.id;
+            
+            // Determine if rank changed for animation
+            let rankChangeClass = '';
+            let rankChangeIcon = '';
+            
+            if (previousRanks[player.id] !== undefined) {
+                if (index < previousRanks[player.id]) {
+                    rankChangeClass = 'rank-up';
+                    rankChangeIcon = '↑';
+                } else if (index > previousRanks[player.id]) {
+                    rankChangeClass = 'rank-down';
+                    rankChangeIcon = '↓';
+                }
+            }
+            
+            // Highlight current user
+            const isCurrentUser = player.id === socket.id;
+            const currentUserClass = isCurrentUser ? 'current-user' : '';
+            
+            rankItem.innerHTML = `
+                <div class="rank-change-indicator ${rankChangeClass}"></div>
+                <div class="rank-info ${currentUserClass}">
+                    <span class="rank-position">${index + 1}.</span>
+                    <span class="player-name">${player.username}${isCurrentUser ? ' (You)' : ''}</span>
+                    <span class="rank-change-icon">${rankChangeIcon}</span>
+                    <span class="player-score">${player.score} pts</span>
+                </div>
+            `;
+            
+            liveLeaderboard.appendChild(rankItem);
+            
+            // Add entrance animation with sequential delay
+            rankItem.style.animationDelay = `${index * 0.1}s`;
+            rankItem.classList.add('animate-entrance');
+            
+            // Add transition effect
+            if (rankChangeClass) {
+                setTimeout(() => {
+                    rankItem.querySelector('.rank-change-indicator').classList.remove(rankChangeClass);
+                }, 2000);
+            }
+        });
+        
+        // Store current ranks for next comparison
+        topPlayers.forEach((player, index) => {
+            previousRanks[player.id] = index;
+        });
+    }
 });

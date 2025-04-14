@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Master - Game</title>
+    <title>Compra certa - Game</title>
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/game.css">
 </head>
@@ -23,7 +23,7 @@
             </div>
             
             <div class="question-container">
-                <h2 id="question-text" class="question-text">Loading question...</h2>
+                <h2 id="question-text" class="question-text">Carregando questões...</h2>
                 
                 <div id="options-container" class="options-container">
                     <!-- Options will be added here dynamically -->
@@ -38,6 +38,15 @@
             <div id="explanation-container" class="explanation-container hidden">
                 <h3>Correct Answer: <span id="correct-answer"></span></h3>
                 <div id="explanation" class="explanation"></div>
+            </div>
+            
+            <div id="question-leaderboard" class="question-leaderboard hidden">
+                <h3>Current Standings</h3>
+                <div class="leaderboard-container">
+                    <ul id="live-leaderboard" class="leaderboard">
+                        <!-- Leaderboard entries will be added here dynamically -->
+                    </ul>
+                </div>
             </div>
         </div>
         
